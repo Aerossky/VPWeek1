@@ -6,6 +6,7 @@ import Interface.CardListener
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rxcode.week1refreshmentoop.databinding.ActivityMainBinding
 import com.rxcode.week1refreshmentoop.databinding.CardHewanBinding
@@ -32,6 +33,9 @@ class MainActivity : AppCompatActivity() , CardListener{
         val layoutManager = LinearLayoutManager(baseContext) //untuk mengatur recyleview mau baris atau kolom
         viewBind.listDataRV.layoutManager = layoutManager //set layout
         viewBind.listDataRV.adapter = adapter //set adapter
+        if(GlobalVar.listDataHewan.isNotEmpty()){
+            viewBind.pesanHewan.isInvisible = true
+        }
 
     }
 
