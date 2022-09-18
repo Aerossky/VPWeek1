@@ -110,17 +110,17 @@ class AddAnimalActivity : AppCompatActivity() {
 
         //usia
         if(hewan.usiaHewan!!.isEmpty()){
-            viewBind.usiaHewanInput.error = "Rating harus diisi 1-10"
+            viewBind.usiaHewanInput.error = "Usia hewan harus diisi 1-100"
             isCompleted=false
         }else if(hewan.usiaHewan!!.contains(".*[A-Z].*".toRegex())){
-            viewBind.usiaHewanInput.error = "Rating tidak boleh ada huruf"
+            viewBind.usiaHewanInput.error = "Usia hewan tidak boleh huruf"
             isCompleted=false
         }else if(hewan.usiaHewan!!.contains(".*[a-z].*".toRegex())){
-            viewBind.usiaHewanInput.error = "Rating tidak boleh ada huruf"
+            viewBind.usiaHewanInput.error = "Usia hewan tidak boleh huruf"
             isCompleted=false
         }else if(hewan.usiaHewan!!.contains(".*[0-9].*".toRegex())){
             if(hewan.usiaHewan!!.toInt()>100) {
-                viewBind.usiaHewanInput.error = "Rating harus 1-100"
+                viewBind.usiaHewanInput.error = "Usia hewan harus 1-100"
                 isCompleted = false
             }
             else {
